@@ -19,16 +19,3 @@ header {
 #scoreboardBody {
     color: gray;
 }
-
-#btn-warning:hover{
-    transition-duration: 0.4s;
-    box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.979), 0 6px 20px 0 rgb(255, 255, 255);
-}
-
-
-/* 
-// target colors of red
-
-// target colors of blue
-
-// target colors of white */
