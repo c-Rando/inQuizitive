@@ -9,64 +9,67 @@ var correctAnswers = {
 }; //*! object to store our list of correct answers
 
 
-   //*! array of questions
+//*! array of questions
 var quizQuestions = [
   {
     question: "_____ workers built the first rocket to put humans on the moon.\n(a): Alabama \n(b): Arizona\n(c): New Jersey ",
     answers: {
-      a: "Alabama",
-      b: "Arizona",
-      c: "New Jersey"
+      alabama: "a",
+      arizona: "b",
+      newJersey: "c"
     },
     correctAnswer: "a"
   },
   {
     question: "_____ is the only state that grows coffee.\n(a): Georgia \n(b): Florida\n(c): Hawaii",
     answers: {
-      a: "Georgia",
-      b: "Florida",
-      c: "Hawaii"
+      georgia: "a",
+      florida: "b",
+      hawaii: "c"
     },
     correctAnswer: "c"
   },
   {
     question: "The state of _____ could fit into Alaska 425 times.\n(a): Vermont \n(b): Rhode Island\n(c): Connecticut",
     answers: {
-      a: "Vermont",
-      b: "Rhode Island",
-      c: "Connecticut"
+      vermont: "a",
+      rhodeIsland: "b",
+      connecticut: "c"
     },
     correctAnswer: "b"
   },
   {
     question: "_____ was home to World’s First Rodeo was held on July 4th, 1869.\n(a): Colorado \n(b): Texas\n(c): Mississippi",
     answers: {
-      a: "Colorado",
-      b: "Texas",
-      c: "Mississippi"
+      colorado: "a",
+      texas: "b",
+      mississippi: "c"
     },
-    correctAnswer: "c"
+    correctAnswer: "a"
   },
   {
-    question:  "_____ leads the nation in copper production.\n(a): Arizona \n(b): Wyoming\n(c): California",
+    question: "_____ leads the nation in copper production.\n(a): Arizona \n(b): Wyoming\n(c): California",
     answers: {
-      a: "Arizona",
-      b: "Wyoming",
-      c: "California"
+      arizona: "a",
+      wyoming: "b",
+      california: "c"
     },
     correctAnswer: "a"
   },
 ];
 
 
+
 // *! random index fetch
-for(var i=0; i < quizQuestions.length; i++) {
+for (var i = 0; i < quizQuestions.length; i++) {
   var response = window.prompt(quizQuestions[i].question);
-  if (response == quizQuestions[i].answers) {
-scoreBoard++;
-alert("Correct!");
+  if (response == quizQuestions[i].correctAnswer) {
+    scoreBoard++;
+    alert("Correct!");
+    console.log();
   } else {
     alert("Wrong!");
+    console.log();
   }
 }
 alert("you got " + scoreBoard + "/" + quizQuestions.length)
