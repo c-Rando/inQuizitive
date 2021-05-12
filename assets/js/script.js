@@ -12,53 +12,6 @@ var initiateBtn = document.querySelector('.initiate-btn');
 console.log(initiateBtn)
 
 //*! array of questions
-var quizQuestions = [
-  {
-    question: "_____ workers built the first rocket to put humans on the moon.\n(a): Alabama \n(b): Arizona\n(c): New Jersey ",
-    answers: {
-      alabama: "a",
-      arizona: "b",
-      newJersey: "c"
-    },
-    correctAnswer: "a"
-  },
-  {
-    question: "_____ is the only state that grows coffee.\n(a): Georgia \n(b): Florida\n(c): Hawaii",
-    answers: {
-      georgia: "a",
-      florida: "b",
-      hawaii: "c"
-    },
-    correctAnswer: "c"
-  },
-  {
-    question: "The state of _____ could fit into Alaska 425 times.\n(a): Vermont \n(b): Rhode Island\n(c): Connecticut",
-    answers: {
-      vermont: "a",
-      rhodeIsland: "b",
-      connecticut: "c"
-    },
-    correctAnswer: "b"
-  },
-  {
-    question: "_____ was home to World’s First Rodeo was held on July 4th, 1869.\n(a): Colorado \n(b): Texas\n(c): Mississippi",
-    answers: {
-      colorado: "a",
-      texas: "b",
-      mississippi: "c"
-    },
-    correctAnswer: "a"
-  },
-  {
-    question: "_____ leads the nation in copper production.\n(a): Arizona \n(b): Wyoming\n(c): California",
-    answers: {
-      arizona: "a",
-      wyoming: "b",
-      california: "c"
-    },
-    correctAnswer: "a"
-  },
-];
 
 
 // TODO: function must run the quiz // runs as an immediate window prompt but not when called by add event listener
