@@ -1,14 +1,7 @@
 body {
     background-color: black;
     line-height: 300%;
-}
-
-#optOut {
-    color: gray;
-}
-
-#optIn {
-    color: gray;
+    ;
 }
 
 
@@ -16,6 +9,56 @@ header {
     font-size: 300%;
 }
 
-#scoreboardBody {
-    color: gray;
+#textBox {
+    border: 5px solid rgb(251, 251, 251);
+    padding: 10px;
+    background: black;
+    background-clip: border-box;  
+  }
+  
+.scoreboard-btn {
+    border-radius: 10%;
+    transition-duration: 0.4s;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+}
+  
+.scoreboard-btn:hover {
+    background-color: #008CBA;
+    color: white;
+}
+  
+.initiate_btn {
+    border-radius: 10%;
+    transition-duration: 0.4s;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #f44336;
+}
+  
+.initiate_btn:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+.kitty-btn {
+    border-radius: 10%;
+    transition-duration: 0.4s;
+    background-color: rgb(0, 0, 0);
+    color: rgb(253, 253, 253);
+    border: 2px solid #7ab311;
+}
+  
+.kitty-btn:hover {
+    background-color: #faf6f6;
+    color: black;
+}
+  
+.page-holder {
+    min-height: 100vh;
+}
+  
+.bg-cover {
+    background-size: cover !important;
 }

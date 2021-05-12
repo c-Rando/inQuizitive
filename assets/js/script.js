@@ -59,20 +59,35 @@ var quizQuestions = [
 ];
 
 
+// TODO: function must run the quiz // runs as an immediate window prompt but not when called by add event listener
+// //*! runs on click quiz 
 
-// *! random index fetch
-for (var i = 0; i < quizQuestions.length; i++) {
-  var response = window.prompt(quizQuestions[i].question);
-  if (response == quizQuestions[i].correctAnswer) {
-    scoreBoard++;
-    alert("Correct!");
-    console.log();
-  } else {
-    alert("Wrong!");
-    console.log();
+function createQuiz() {
+  // *! random index fetch
+  for (var i = 0; i < quizQuestions.length; i++) {
+    var response = window.prompt(quizQuestions[i].question);
+    if (response == quizQuestions[i].correctAnswer) {
+      scoreBoard++;
+      alert("Correct!");
+      console.log();
+    } else {
+      alert("Wrong!");
+      console.log();
+    }
   }
+  alert("you got " + correctAnswers + "/" + quizQuestions.length)
+
 }
-alert("you got " + scoreBoard + "/" + quizQuestions.length)
+
+
+document.getElementById("scoreBoardContainer");
+function runQuiz() {
+  return ("Your final score is " + finalScore);
+};
+
+initiate_btn.addEventListener('click', runQuiz());
+
+var finalScore = correctAnswers + quizQuestions.length
 
 // ANCHOR considered variables 
 
@@ -127,7 +142,6 @@ function fetchScoreBoard() { }
 
 // *! grabs two buttons on landing page
 document.getElementById("scoreboard-btn").addEventListener('click', fetchScoreBoard());
-document.getElementById("initiate_btn").addEventListener('click', runQuiz());
 
 
 // TODO: utilize these
