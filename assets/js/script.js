@@ -8,6 +8,8 @@ var correctAnswers = {
   Arizona: "Arizona"
 }; //*! object to store our list of correct answers
 
+var initiateBtn = document.querySelector('.initiate-btn');
+console.log(initiateBtn)
 
 //*! array of questions
 var quizQuestions = [
@@ -81,19 +83,21 @@ function createQuiz() {
 
 
 document.getElementById("scoreBoardContainer");
-function runQuiz() {
+function createQuiz(event) {
+  console.log(event)
   return ("Your final score is " + finalScore);
 };
 
-initiate_btn.addEventListener('click', runQuiz());
+//*!DO NOT PROVIDE PARENTHESES AFTER THE FUNCTION NAME OR IT WILL CALL THE FUNCTION IMMEDIATELY
+initiateBtn.addEventListener('click', createQuiz);
+console.log("This button works");
 
 var finalScore = correctAnswers + quizQuestions.length
 
 // ANCHOR considered variables 
 
-var scoreBoard = document.getElementById('scoreboard-btn');
-// var # = document.getElementById('#');
-var initiateButton = document.getElementById('initiate_btn');
+// var scoreBoard = document.getElementById('scoreboard-btn');
+// console.log(scoreBoard)
 
 
 
@@ -132,9 +136,13 @@ buildQuiz();
 
 function buildQuiz() { }
 
+
+
 // TODO: function must run the quiz 
 // //*! runs on click quiz 
 runQuiz();
+// TODO: define 
+
 
 // TODO: this must be summoned when we click the ("scoreboard-btn") ; must retrieve scoreboard
 //*! on submit, show results
