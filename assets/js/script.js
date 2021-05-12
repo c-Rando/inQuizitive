@@ -6,12 +6,13 @@ var correctAnswers = {
   Alaska: "Alaska",
   Colorado: "Colorado",
   Arizona: "Arizona"
-}; //*? object to store our list of correct answers
+}; //*! object to store our list of correct answers
 
-   //*? array of questions
+
+   //*! array of questions
 var quizQuestions = [
   {
-    question: "_____ workers built the first rocket to put humans on the moon.",
+    question: "_____ workers built the first rocket to put humans on the moon.\n(a): Alabama \n(b): Arizona\n(c): New Jersey ",
     answers: {
       a: "Alabama",
       b: "Arizona",
@@ -20,7 +21,7 @@ var quizQuestions = [
     correctAnswer: "a"
   },
   {
-    question: "_____ is the only state that grows coffee.",
+    question: "_____ is the only state that grows coffee.\n(a): Georgia \n(b): Florida\n(c): Hawaii",
     answers: {
       a: "Georgia",
       b: "Florida",
@@ -29,16 +30,16 @@ var quizQuestions = [
     correctAnswer: "c"
   },
   {
-    question: "The state of _____ could fit into Alaska 425 times.",
+    question: "The state of _____ could fit into Alaska 425 times.\n(a): Vermont \n(b): Rhode Island\n(c): Connecticut",
     answers: {
       a: "Vermont",
       b: "Rhode Island",
       c: "Connecticut"
     },
-    correctAnswer: "c"
+    correctAnswer: "b"
   },
   {
-    question: "_____ was home to World’s First Rodeo was held on July 4th, 1869.",
+    question: "_____ was home to World’s First Rodeo was held on July 4th, 1869.\n(a): Colorado \n(b): Texas\n(c): Mississippi",
     answers: {
       a: "Colorado",
       b: "Texas",
@@ -47,77 +48,95 @@ var quizQuestions = [
     correctAnswer: "c"
   },
   {
-    question:  "_____ leads the nation in copper production.",
+    question:  "_____ leads the nation in copper production.\n(a): Arizona \n(b): Wyoming\n(c): California",
     answers: {
-      a: "Colorado",
-      b: "Texas",
-      c: "Mississippi"
+      a: "Arizona",
+      b: "Wyoming",
+      c: "California"
     },
-    correctAnswer: "c"
+    correctAnswer: "a"
   },
 ];
 
 
-
-
-var scoreBoard = document.getElementById('btn-primary');
-var resultsContainer = document.getElementById('results');
-var submitButton = document.getElementById('submit');
+// *! random index fetch
+for(var i=0; i < quizQuestions.length; i++) {
+  var response = window.prompt(quizQuestions[i].question);
+  if (response == quizQuestions[i].answers) {
+scoreBoard++;
+alert("Correct!");
+  } else {
+    alert("Wrong!");
+  }
+}
+alert("you got " + scoreBoard + "/" + quizQuestions.length)
 
 // ANCHOR considered variables 
 
+var scoreBoard = document.getElementById('scoreboard-btn');
+// var # = document.getElementById('#');
+var initiateButton = document.getElementById('initiate_btn');
 
 
 
-// Select the existing DOM element, <div id="empty-div">, and assign to a new variable
+
+
+//*! Select the existing DOM element, <div id="empty-div">, and assign to a new variable
 var rootEl = $('#root');
 
-// Create a <p>` element to store the quote's author and assign to a new variable
+//*! Create a <p>` element to store the quote's author and assign to a new variable
 var contentEl = $('<p>');
 
-// Adds text subtitle, then set parameters target colors
+//*! Adds text subtitle, then set parameters target colors
 contentEl.text('💖 GOD BLESS AMERICA 💖');
 
 
 
-// Create an <h1> tag, appends that to the page to page & assigns its value to variable
+//*! Create an <h1> tag, appends that to the page to page & assigns its value to variable
 var contentText = $('<h1>')
 
-// posts text at header location
+//*! posts text at header location
 contentText.text(
   'WELCOME to our quiz about The United States of America! Here we will test your trivial excellence regarding various random facts about the United States of America!'
 );
 
-var endGameScore = []; //*? THIS WILL LIKELY BE ANOTHER OBJECT OR ARRAY TO PASS OUR FINAL SCORE INTO
+// TODO: var endGameScore = [];  TODO THIS WILL LIKELY BE ANOTHER OBJECT OR ARRAY TO PASS OUR FINAL SCORE INTO
 
 
 
-
+// TODO: complete the build quiz function
 buildQuiz();
 
 
 
-// //*! displays quiz right away
+// //*! displays quiz right away 
+// *addEventLister?
+
 function buildQuiz() { }
+
+// TODO: function must run the quiz 
 // //*! runs on click quiz 
-// runQuiz();
+runQuiz();
 
+// TODO: this must be summoned when we click the ("scoreboard-btn") ; must retrieve scoreboard
 //*! on submit, show results
-function showResults() { }
+function fetchScoreBoard() { }
 
-document.getElementById("btn-danger").addEventListener('click', runQuiz());
+// *! grabs two buttons on landing page
+document.getElementById("scoreboard-btn").addEventListener('click', fetchScoreBoard());
+document.getElementById("initiate_btn").addEventListener('click', runQuiz());
 
+
+// TODO: utilize these
 var quizContainer = document.getElementById("quiz")
 var scoreBoardContainer = document.getElementById("scoreBoard")
-var initiateProtocolButton = document.getElementById("btn-danger")
+var initiateProtocolButton = document.getElementById("initiate_btn")
 
 
+// *! a couple of font style modifiers onto the filler texts
 contentText.attr('style', 'font-size: 35px; color: whitesmoke;');
 contentEl.attr('style', 'font-size: 25px;');
-
-
-// ANCHOR this posts (appends) all of the 
-
-
+// ANCHOR this posts (appends) all of the changes
+// *! posts & appends all changes
 contentText.append(contentEl);
 rootEl.append(contentText);
