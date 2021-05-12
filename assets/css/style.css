@@ -10,6 +10,7 @@ header {
 }
 
 #textBox {
+    border-radius: 8%;
     border: 5px solid rgb(251, 251, 251);
     padding: 10px;
     background: black;
