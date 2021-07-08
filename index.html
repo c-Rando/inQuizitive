@@ -22,10 +22,16 @@
             <div id="textBox">
 
                 <header class="text-center text-white py-5">
-                    <h1 class="display-4 font-weight-bold mb-4"><span style="color: red;">RED,</span> <span
-                            style="color: whitesmoke;">WHITE,</span> <span style="color:blue;">&
-                            BLUE FOREVER</span></h1>
-                    <p class="lead mb-0">"We the people..."</p>
+                    <h1 class="display-4 font-weight-bold mb-4">
+                        <span style="color: red;">RED,</span>
+                        <span style="color: whitesmoke;">WHITE,</span>
+                        <span style="color:blue;">& BLUE FOREVER</span>
+                    </h1>
+
+                    <div id="timer">
+                        <p class="lead mb-0">"We the people..."</p>
+                    </div>
+
                     <p class="font-italic">All of these facts are provided & supported by <a
                             href="https://www.50states.com/facts/.com" class="text-white">
                             <u>50states.com</u></a>
@@ -36,19 +42,25 @@
                     <p id="optIn">
                         Thank you for joining us today here at my inQuizitive, I look forward to testing your trivia.
                         Click
-                        <button type="button" class="initiate-btn">here</button> for a chance at the CHAMPIONSHIP BELT!
+                        <button type="button" onclick="location.href = 'questions.html'">here</button>
+                        for a chance at the CHAMPIONSHIP BELT!
                     </p>
+
                     <!-- ANCHOR KITTENS -->
                     <p id="optOut"> But then again, if you weren't interested in playing, you could click
                         <a href="https://www.catsbest.eu/kittens-tips-to-follow/"><button type="button"
                                 class="kitty-btn">here</button></a> and just stare at kittens. Honestly, who would blame
                         you?
                     </p>
-                    <!-- ANCHOR SCOREBOARD -->
 
+                    <!-- ANCHOR SCOREBOARD -->
                     <div id="scoreBoardContainer">
                         <p id="scoreboardBody">I mean, you COULD check the scoreboard
-                            <button type="button" class="scoreboard-btn">here</button> if you wanted to view the score
+                            <a href="./highscores.html">
+                                <button type="button" class="scoreboard-btn">
+                                    here
+                                </button>
+                            </a> if you wanted to view the score
                             board.
                         </p>
                     </div>
@@ -56,30 +68,15 @@
                 </div>
 
 
-                <!-- ANCHOR HEADER -->
-                <h4 class="timerEl" style="text-align:center;"></h4>
+                <!-- ANCHOR SCRIPT -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+                <script
+                    src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
 
-                <!-- ANCHOR ROOT -->
-                <div id="root">
-
-                    <!-- ANCHOR ACTUAL QUIZ -->
-                    <div id="quizJuiceBox">
-
-                    </div>
-                    <!-- ANCHOR INITIATE QUIZ -->
-
-
-
-
-                    <!-- ANCHOR SCRIPT -->
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-                    <script
-                        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
-                    <script type="text/javascript" src="./assets/js/gameLogic.js"></script>
-                </div>
             </div>
         </div>
+    </div>
 </body>
 
 </html>

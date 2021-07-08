@@ -1,38 +1,74 @@
-// TODO: write a function that retrieves highschores form local storage 
-//   function getWins() {
-// Get stored value from client storage, if it exists
-var storedWins = localStorage.getItem("winCount");
-// If stored value doesn't exist, set counter to 0
-if (storedWins === null) {
-    winCounter = 0;
-} else {
-    // If a value is retrieved from client storage set the winCounter to that value
-    winCounter = storedWins;
-}
-//Render win count to page
-win.textContent = winCounter;
+//  prints to page gets scores, sorts them and creates a leaderboard
+function printHighscores() {
+    var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
 
+    highscores.sort(function (a, b) {
+        return b.score - a.score;
+    });
+    highscores.forEach(function (score) {
+        var liTag = document.createElement("li");
+        liTag.textContent = score.initials + " - " + score.score;
 
-function getlosses() {
-    var storedLosses = localStorage.getItem("loseCount");
-    if (storedLosses === null) {
-        loseCounter = 0;
-    } else {
-        loseCounter = storedLosses;
+        var olEl = document.getElementById("highscores");
+        olEl.appendChild(liTag);
+    });
+};
+
+var userScore;
+
+function clearHighscores() {
+    window.localStorage.removeItem("highscores");
+    window.location.reload();
+};
+
+function allStorage() {
+
+    var values = [],
+        keys = Object.keys(localStorage),
+        i = keys.length;
+
+    while ( i-- ) {
+        values.push({ name: keys[i], value: localStorage.getItem(keys[i]) });
     }
-    lose.textContent = loseCounter;
+
+    return values;
 }
 
+function getHighScore() {
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const params = Object.fromEntries(urlSearchParams.entries());
+    userScore = params.score;
+    $('#highscore').text(`Your score was: ${userScore}`);
+}
 
-function checkWin() {
-    // If the word equals the blankLetters array when converted to string, set isWin to true
-    if (chosenWord === blanksLetters.join("")) {
-        // This value is used in the timer function to test if win condition is met
-        isWin = true;
+function drawScoreboard() {
+    const allScores = allStorage();
+    for (score of allScores) {
+        $('#scoreboard').append(`
+            <div class="score">
+                <span class="score-name"> ${score.name}</span> - 
+                <span class="score-value"> ${score.value}</span>
+            </div>
+        `);
     }
 }
 
-// display on page
+getHighScore();
+drawScoreboard();
 
-// call your function RIGHT under the function 
+function submitScore ()  {
+    const userFullname = $('#userFullname').val();
 
+    if (!userFullname) {
+        return alert('Please enter your name to save to the scoreboard');
+    }
+    $('#submit-score-container').hide();
+
+    localStorage.setItem(userFullname, userScore);
+    $('#scoreboard').append(`
+        <div class="score">
+            <span class="score-name"> ${userFullname}</span> - 
+            <span class="score-value"> ${userScore}</span>
+        </div>
+    `);
+}

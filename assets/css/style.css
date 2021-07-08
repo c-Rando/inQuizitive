@@ -63,3 +63,25 @@ header {
 .bg-cover {
     background-size: cover !important;
 }
+
+.error-message {
+    height: 60px;
+    color: red;
+    width: 100%;
+    text-align: center;
+}
+
+.success-message {
+    height: 60px;
+    color: green;
+    width: 100%;
+    text-align: center;
+}
+
+#scoreboard {
+    text-align: center;
+    margin-top: 100px;
+    border: 1px solid grey;
+    width: 300px;
+    margin: auto;
+}

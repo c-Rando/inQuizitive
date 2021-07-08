@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>inQuizive Highscore</title>
+</head>
+<body style="background-color: white;">
+    <div class="d-flex justify-content-between">
+        <button>
+            <a href="./index.html">
+                Click Me to bring yourself back to the home page.
+            </a>
+        </button>
+
+        <button>
+            <a href="./questions.html">
+                Click here to play again.
+            </a>
+        </button>
+    </div>
+
+    <div class="highscore-container">
+        <h1 id="highscore" class="text-center"></h1>
+    </div>
+
+    <div class="my-3 text-center" id="submit-score-container">
+        <input type="text" placeholder="Enter your name" id="userFullname" />
+        <button id="submitScore" onclick="submitScore()">Submit Score</button>
+    </div>
+
+    <div class="mt-4 text-center">Scoreboard</div>
+    <div class="mt-2" id="scoreboard"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+
+    <script src="./assets/js/hsLogic.js"></script>
+</body>
+
+</html>
