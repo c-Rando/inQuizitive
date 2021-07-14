@@ -2,6 +2,7 @@
 This is a quiz, serving to ask the user about a bunch of general United States trivia questions!!!
 
 
+# Opening inspector on this program in the browser will display a CORS policy error unless, the code is run using LiveServer.
 
 ## Deployed via Github...
 
@@ -27,6 +28,8 @@ The quiz will ask 'questions', store the users 'score', and as a result will tal
 ## Usage & Layout
 
 This page institutes responsive design elements.
+
+
 
 ```
 -html:
