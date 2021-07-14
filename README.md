@@ -7,10 +7,10 @@ This is a quiz, serving to ask the user about a bunch of general United States t
 
 ```bash
 rel path =
-file:///C:/Users/leon/Desktop/Homework/inQuizitive/index.html 
+file:///C:/Users/leon/Desktop/Homework/inQuizitive/index.html - This file is using a relative path file structure.
 
 deployed path =
-https://github.com/c-Rando/inQuizitive
+https://github.com/c-Rando/inQuizitive - This file was deployed to github.
 
 repo path = 
 https://c-rando.github.io/inQuizitive/
@@ -30,12 +30,12 @@ This page institutes responsive design elements.
 
 ```
 -html:
-index.html - landing page
+index.html - landing page - This is an html page that the user lands on by logging in.
 
 -assets:
 
 css:
-style.css
+style.css - This is a stylesheet compiled to apply style bundles through class selectors.
 
 js:
 gameLogic.js - stores out structure for gameplay
