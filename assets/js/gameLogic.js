@@ -1,11 +1,14 @@
 
-//TODO: DECLARE global variables
+// ! global variables
+var resetButton = document.querySelector(".reset-button");
 var timerEl = $(".timer");
 var buttonContainer = $("#button-container");
 var time = 30;
 var penalty = 5;
 var scoreBoardContainer = document.querySelector("scoreBoardContainer");
 var timeInterval;
+var currentQuestionsIndex = 0
+
 
 var quizQuestions = [
   {
@@ -56,11 +59,10 @@ var quizQuestions = [
 ];
 
 function clockTick() {
-  console.log("clockTick was entered")
+  console.log("clockTick was entered");
   // update time
   time--;
   timerEl.text(`${time} seconds left`);
-
   // check if user ran out of time
   if (time <= 0) {
     quizEnd();
@@ -89,18 +91,18 @@ function startGame() {
       </div>
     `);
     i++;
-  }
+  };
 };
 
 function stopTime() {
   clearInterval(timeInterval);
-}
+};
 
 function quizEnd() {
   stopTime();
   $('#success-message').text(`Your score is ${time}`);
   window.location.href = `highscores.html?score=${time}`;
-}
+};
 
 function goToNextQuestion (questionIndex) {
   debugger;
@@ -120,41 +122,30 @@ function goToNextQuestion (questionIndex) {
     } else {
       $('#success-message').text(`Answer correct! Keep it up!`);
       setTimeout(() => { $('#success-message').text(''); }, 1000);
-    }
-  
+    };
     $(`#question-container-${questionIndex}`).addClass('d-none');
     $(`#question-container-${questionIndex + 1}`).removeClass('d-none');
-  }
+  };
+};
 
-}
-
-// Updates win count on screen and sets win count to client storage
 function setWins() {
   win.textContent = winCounter;
   localStorage.setItem("winCount", winCounter);
   window.location.href = "highscores.html";
-}
+};
 
-//  TODO allocate to a new file
-
-
-// Updates lose count on screen and sets lose count to client storage
 function setLosses() {
   lose.textContent = loseCounter;
   localStorage.setItem("loseCount", loseCounter);
   window.location.href = "highscores.html";
-}
-
+};
 
 function checkWin() {
-  // If the word equals the blankLetters array when converted to string, set isWin to true
   if (chosenWord === blanksLetters.join("")) {
-    // This value is used in the timer function to test if win condition is met
     isWin = true;
-  }
-}
+  };
+}; 
 
-// Attach event listener to document to listen for key event
 document.addEventListener("keydown", function (event) {
   // If the count is zero, exit function
   if (timerCount === 0) {
@@ -174,10 +165,6 @@ document.addEventListener("keydown", function (event) {
 
 
 
-
-
-//TODO: DECLARE VARIABLES TO KEEP TRACK OF OUT QUIZ STATE (QUESTIONS INDEX TIME and variables )
-
 function winGame() {
   wordBlank.textContent = "YOU WON!!!🏆 ";
   winCounter++
@@ -189,7 +176,6 @@ function loseGame() {
   setLosses()
 }
 // Bonus: Add reset button
-var resetButton = document.querySelector(".reset-button");
 
 function resetGame() {
   // Resets win and loss counts
@@ -198,32 +184,7 @@ function resetGame() {
   // Renders win and loss counts and sets them into client storage
   setWins()
   setLosses()
-}
-// Attaches event listener to button
-// resetButton.addEventListener("click", resetGame);
-
-//TODO: DECLARE variables to reference dom elements
-
-
-//TODO: start quiz function to start quiz
-
-// call question loop
-
-
-
-// function that checks a question click to check each of these buttons
-// if value of clicked answer  = correct value, currentQuestion++, if wrong timer- 15 sec
-// make card with question title, then make a button for each value inside of the answers object
-// <button create, says value, and has underlying attribute value for wahtever the string is 
-// ADD AN EVENT LISTENER FOR ADDING A NEW QUESTION WHENEBER OLD BUTTON IS CLICKED  
-// assign attribute attr(value, answers.a)
-
-// for each button, give a value to 
-
-//TODO: create a function to render questions for the user
-
-
-
+};
 
 function questionGeneratingLoop() {
   for (var i = 0; i < quizQuestions.length; i++) {
@@ -240,43 +201,8 @@ function questionGeneratingLoop() {
   alert("you got " + correctAnswers + "/" + quizQuestions.length)
 };
 
-var currentQuestionsIndex = 0
-
 function getQuestion() {
   var currentQuestion = quizQuestions[currentQuestionsIndex]
   var questionTitleEl = $("#question-title")
   questionTitleEl.textContent = currentQuestion.question
 };
-
-
-
-// TODO: create function to end quiz
-
-// TODO: clear time interval
-
-// TODO: show a end quiz page
-
-// TODO: show user final score
-
-// TODO: check out methods time.hide or .show to hide and show time and questions
-
-
-// TODO: function to run time
-// display time
-// time ++ or time --
-
-// if time hits 0, run endQuiz function
-
-// TODO: create function for highscore
-
-// TODO: write any functions to check how many questions user got right and perform math orhardcoded data to display user score
-
-// TODO: check to see that user inputs user name/ initials into user prompt
-// save highscores to user storage
-// retrieve highscores from local storage
-
-// TODO: object to store users score page
-
-// TODO: redirect to highscores
-
-// TODO: window.location.highscores.html
