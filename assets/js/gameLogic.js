@@ -6,13 +6,54 @@ var time = 30;
 var penalty = 5;
 var scoreBoardContainer = document.querySelector("scoreBoardContainer");
 var timeInterval;
-var quizQuestions;
 
-import('./questions.js')
-  .then(resp => {
-    quizQuestions = resp.quizQuestions;
-
-  });
+var quizQuestions = [
+  {
+    question: "_____ workers built the first rocket to put humans on the moon.\n(a): Alabama \n(b): Arizona\n(c): New Jersey ",
+    answers: {
+      a: "Alabama",
+      b: "Arizona",
+      c: "New Jersey"
+    },
+    correctAnswer: "Alabama"
+  },
+  {
+    question: "_____ is the only state that grows coffee.\n(a): Georgia \n(b): Florida\n(c): Hawaii",
+    answers: {
+      a: "georgia",
+      b: "florida",
+      c: "hawaii"
+    },
+    correctAnswer: "hawaii"
+  },
+  {
+    question: "The state of _____ could fit into Alaska 425 times.\n(a): Vermont \n(b): Rhode Island\n(c): Connecticut",
+    answers: {
+      a: "vermont",
+      b: "rhodeIsland",
+      c: "connecticut"
+    },
+    correctAnswer: "rhodeIsland"
+  },
+  {
+    question: "_____ was home to World’s First Rodeo was held on July 4th, 1869.\n(a): Colorado \n(b): Texas\n(c): Mississippi",
+    answers: {
+      a: "colorado",
+      b: "texas",
+      c: "mississippi"
+    },
+    correctAnswer: "colorado"
+  },
+  {
+    question: "_____ leads the nation in copper production.\n(a): Arizona \n(b): Wyoming\n(c): California",
+    answers: {
+      a: "arizona",
+      b: "wyoming",
+      c: "california"
+    },
+    correctAnswer: "arizona"
+  },
+];
 
 function clockTick() {
   console.log("clockTick was entered")
@@ -58,12 +99,10 @@ function stopTime() {
 function quizEnd() {
   stopTime();
   $('#success-message').text(`Your score is ${time}`);
-  debugger;
-  window.location.href = `/highscores.html?score=${time}`;
+  window.location.href = `highscores.html?score=${time}`;
 }
 
 function goToNextQuestion (questionIndex) {
-  debugger;
 
   if (questionIndex >= quizQuestions.length) {
     quizEnd();
