@@ -103,8 +103,8 @@ function quizEnd() {
 }
 
 function goToNextQuestion (questionIndex) {
-
-  if (questionIndex >= quizQuestions.length) {
+  debugger;
+  if (questionIndex >= quizQuestions.length-1) {
     quizEnd();
   } else {
     const answer = $(`input[name='alternatives-${questionIndex}']:checked`).val();
